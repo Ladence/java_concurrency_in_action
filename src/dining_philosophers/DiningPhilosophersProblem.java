@@ -17,11 +17,11 @@ public class DiningPhilosophersProblem {
         for (int i = 0; i < NUMBER; i++) {
             if (i != NUMBER - 1) {
                 philosophers[i] = new Philosopher(forks[i], forks[i+1], i);
-                new Thread(philosophers[i]).start();
             } else {
                 philosophers[i] = new Philosopher(forks[0], forks[i], i);
-                new Thread(philosophers[i]).start();
             }
+
+            new Thread(philosophers[i]).start();
         }
 
     }
